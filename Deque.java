@@ -11,10 +11,6 @@ public interface Deque<T>{
   
   public T peekLast();
   
-  public boolean isEmpty();
-  
-  public boolean contains();
-  
 }
   
   
