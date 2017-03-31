@@ -1,4 +1,4 @@
-public Interface Deque<T>{
+public interface Deque<T>{
 
 
   public void addLast(T x);
@@ -10,6 +10,8 @@ public Interface Deque<T>{
   public T peekFirst();
   
   public T peekLast();
+  
+  public boolean isEmpty();
   
 }
   
