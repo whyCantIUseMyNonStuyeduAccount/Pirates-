@@ -13,6 +13,8 @@ public interface Deque<T>{
   
   public boolean isEmpty();
   
+  public boolean contains();
+  
 }
   
   
