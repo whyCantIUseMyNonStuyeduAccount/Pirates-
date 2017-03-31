@@ -1,7 +1,7 @@
 public class LLDeque implements Deque{
     
-    new LLNode<T> first, last;
-    int size;
+    public LLNode<T> first, last;
+    public int size;
     
     public LLDeque() {
 	first = null;
@@ -31,6 +31,7 @@ public class LLDeque implements Deque{
     public static void main(String[] args) {
 
     }
+}
 
     
 	
