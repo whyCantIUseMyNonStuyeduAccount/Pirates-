@@ -1,4 +1,4 @@
-public class LLDeque implements Deque{
+public class LLDeque<T> implements Deque<T>{
     
     public LLNode<T> first, last;
     public int size;
@@ -10,8 +10,9 @@ public class LLDeque implements Deque{
     }
     
     public void addLast (T node) {
-	last.setNext(node);
-	last = node;
+	LLNode nnode = new LLNode(node, null);
+	last.setNext(nnode);
+	last = nnode;
     }
     public void removeFirst() {
 	first = first.getNext();
@@ -20,10 +21,10 @@ public class LLDeque implements Deque{
 	return size;
     }
     public T peekFirst() {
-	return first._cargo;
+	return first.getValue();
     }
     public T peekLast() {
-	return last._cargo;
+	return last.getValue();
     }
     public boolean isEmpty() {
 	return size == 0;
