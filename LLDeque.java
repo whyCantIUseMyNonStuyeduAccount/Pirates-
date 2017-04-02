@@ -1,4 +1,4 @@
-public class LLDeque implements Deque{
+public class LLDeque implements Deque<T>{
     
     public LLNode<T> first, last;
     public int size;
