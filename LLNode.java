@@ -1,34 +1,31 @@
-public class LLNode 
-{
+public class LLNode<T> {
 
-    private String _cargo;    
-    private LLNode _nextNode; 
-
-    public LLNode( String value, LLNode next ) 
-    {
-  	_cargo = value;
-  	_nextNode = next;
+    private T _cargo;    
+    private LLNode<T> _nextNode;
+	
+    public LLNode( T value, LLNode<T> next ) {
+	_cargo = value;
+	_nextNode = next;
     }
 
 
-    public String getCargo() { return _cargo; }
-
-    public LLNode getNext() { return _nextNode; }
  
-    public String setCargo( String newCargo ) 
-    {
-	  String foo = getCargo();
-	  _cargo = newCargo;
-	  return foo;
+    public T getValue() { return _cargo; }
+
+    public LLNode<T> getNext() { return _nextNode; }
+
+    public T setValue( T newCargo ) {
+	T foo = getValue();
+	_cargo = newCargo;
+	return foo;
     }
 
-    public LLNode setNext( LLNode newNext ) 
-    {
-	  LLNode foo = getNext();
-	  _nextNode = newNext;
-	  return foo;
+    public LLNode<T> setNext( LLNode<T> newNext ) {
+	LLNode<T> foo = getNext();
+	_nextNode = newNext;
+	return foo;
     }
 
     public String toString() { return _cargo.toString(); }
 
-}//end class LLNode
+}
