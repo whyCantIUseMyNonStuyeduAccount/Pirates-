@@ -1,31 +1,55 @@
-public class LLNode<T> {
+public class DLLNode<T> 
+{
+    private T _cargo;    //cargo may only be of type T
+    private DLLNode<T> _nextNode, _prevNode; //pointers to next, prev DLLNodes
 
-    private T _cargo;    
-    private LLNode<T> _nextNode;
-	
-    public LLNode( T value, LLNode<T> next ) {
+
+    // constructor -- initializes instance vars
+    public DLLNode( T value, DLLNode<T> prev, DLLNode<T> next ) {
 	_cargo = value;
 	_nextNode = next;
+	_prevNode = prev;
     }
 
 
- 
-    public T getValue() { return _cargo; }
+    //--------------v  ACCESSORS  v--------------
+    public T getCargo() { return _cargo; }
 
-    public LLNode<T> getNext() { return _nextNode; }
+    public DLLNode<T> getNext() { return _nextNode; }
 
-    public T setValue( T newCargo ) {
-	T foo = getValue();
+    public DLLNode<T> getPrev() { return _prevNode; }
+    //--------------^  ACCESSORS  ^--------------
+
+
+    //--------------v  MUTATORS  v--------------
+    public T setCargo( T newCargo ) {
+	T foo = getCargo();
 	_cargo = newCargo;
 	return foo;
     }
 
-    public LLNode<T> setNext( LLNode<T> newNext ) {
-	LLNode<T> foo = getNext();
+    public DLLNode<T> setNext( DLLNode<T> newNext ) {
+	DLLNode<T> foo = getNext();
 	_nextNode = newNext;
 	return foo;
     }
 
+    public DLLNode<T> setPrev( DLLNode<T> newPrev ) {
+	DLLNode<T> foo = getPrev();
+	_prevNode = newPrev;
+	return foo;
+    }
+    //--------------^  MUTATORS  ^--------------
+
+
+    // override inherited toString
     public String toString() { return _cargo.toString(); }
 
-}
+
+    //main method for testing
+    public static void main( String[] args ) {
+
+	
+    }//end main
+
+}//end class DLLNode
