@@ -9,6 +9,10 @@ public class LLDeque<T> implements Deque<T>{
 	size = 0;
     }
     
+    public void addFirst(T node){
+	first = new LLNode(node, first);    
+    }
+	
     public void addLast (T node) {
 	LLNode nnode = new LLNode(node, null);
 	last.setNext(nnode);
@@ -17,6 +21,7 @@ public class LLDeque<T> implements Deque<T>{
     public void removeFirst() {
 	first = first.getNext();
     }
+	
     public int size() {
 	return size;
     }
