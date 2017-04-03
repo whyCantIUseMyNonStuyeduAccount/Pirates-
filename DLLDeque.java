@@ -6,39 +6,51 @@ public class DLLDeque<T> implements Deque<T>{
     public int size;
     
     public DLLDeque() {
-	first = null;
-	last = null;
+	first = new DLLNode<T>(null, null, null);
+	last = new DLLNode<T>(null, null, null);
 	size = 0;
-    }
+    }   
     
     public void addFirst(T node){
-	first = new DLLNode(node, first);    
+	first.setPrev(new DLLNode(node, null, first));
+	first = first.getPrev();  
 	size++;
     }
 	
     public void addLast (T node) {
-	DLLNode nnode = new DLLNode(node, null);
-	last.setNext(nnode);
-	last = nnode;
+	last.setNext(new DLLNode(node, last, null));
+	last = last.getNext();
 	size++;
     }
-    public void removeFirst() {
-	first = first.getNext();
+    
+    public T removeFirst() {
 	size--;
+	first = first.getNext();	
+	return first.setPrev(null).getCargo();
+    }
+
+    public T removeLast(){
+	size--;
+	last = last.getPrev();
+	return last.setNext(null).getCargo();
     }
 	
     public int size() {
 	return size;
     }
+    
     public T peekFirst() {
 	return first.getCargo();
     }
+    
     public T peekLast() {
 	return last.getCargo();
     }
+    
     public boolean isEmpty() {
 	return size == 0;
     }
+    
     public static void main(String[] args) {
 	DLLDeque fred = new DLLDeque();
 	System.out.println(fred.isEmpty());
