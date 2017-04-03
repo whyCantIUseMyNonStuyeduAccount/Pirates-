@@ -12,12 +12,12 @@ public class DLLDeque<T> implements Deque<T>{
     }
     
     public void addFirst(T node){
-	first = new LLNode(node, first);    
+	first = new DLLNode(node, first);    
 	size++;
     }
 	
     public void addLast (T node) {
-	LLNode nnode = new LLNode(node, null);
+	DLLNode nnode = new DLLNode(node, null);
 	last.setNext(nnode);
 	last = nnode;
 	size++;
