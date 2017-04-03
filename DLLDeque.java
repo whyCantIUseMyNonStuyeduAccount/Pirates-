@@ -5,7 +5,7 @@ public class DLLDeque<T> implements Deque<T>{
     public DLLNode<T> first, last;
     public int size;
     
-    public LLDeque() {
+    public DLLDeque() {
 	first = null;
 	last = null;
 	size = 0;
