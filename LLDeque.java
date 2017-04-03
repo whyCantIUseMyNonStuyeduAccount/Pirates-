@@ -1,5 +1,7 @@
 public class LLDeque<T> implements Deque<T>{
     
+    //add removeLast(), if the thing exists and where it exists, other stuffs	
+	
     public LLNode<T> first, last;
     public int size;
     
