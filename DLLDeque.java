@@ -31,10 +31,10 @@ public class DLLDeque<T> implements Deque<T>{
 	return size;
     }
     public T peekFirst() {
-	return first.getValue();
+	return first.getCargo();
     }
     public T peekLast() {
-	return last.getValue();
+	return last.getCargo();
     }
     public boolean isEmpty() {
 	return size == 0;
